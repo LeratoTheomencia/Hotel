@@ -1,6 +1,6 @@
 import React from 'react';
 import {StyleSheet, Text, View, Image, TouchableOpacity, } from 'react-native';
-import {firebase} from './Firebase/Firebase/Conflig'
+
 
 
 const StandardDetails = ({ navigation }) =>{
@@ -11,7 +11,7 @@ const StandardDetails = ({ navigation }) =>{
       <Text style={styles.header}>Standard</Text>
 
         <Text style={{marginTop: 10, fontWeight: 'bold', marginLeft: 5, fontSize: 15}}>Details</Text>
-        <Image source={require('../../assets/Images/standard 1.jpg')} style={styles.img1} />
+        
       
         <Text style={styles.title}>Details</Text>
 

@@ -1,14 +1,17 @@
 import React from 'react';
 import {StyleSheet, View, Text, Image, TouchableOpacity, TextInput} from 'react-native';
-import {firebase} from './Firebase/Firebase/Conflig'
+import MapView, { PROVIDER_GOOGLE} from 'react-native-maps'
 
 const Maps = ({ navigation }) => {
   return (
     <View style={styles.container}>
 
-        
+        <MapView 
+          provider={PROVIDER_GOOGLE}
+          customMapStyle={MapStyle}
+        >
     
-        <Image source={require} style={styles.img} />
+        
         <View>
             <TextInput 
               style={styles.input}
@@ -25,7 +28,7 @@ const Maps = ({ navigation }) => {
           <TouchableOpacity style={styles.button}>
                   <Text style={styles.btn}onPress={() => navigation.navigate('Conclude')}>Next</Text>
               </TouchableOpacity>
-        
+        </MapView>
     </View>
   )
 }

@@ -116,7 +116,7 @@ const Form = ({ navigation }) => {
           />
 
                            <TouchableOpacity style={styles.button}>
-                  <Text style={styles.btn} onPress={() => navigation.navigate('Maps')}>Confirm</Text>
+                  <Text style={styles.btn} onPress={() => navigation.navigate('Home')}>Confirm</Text>
               </TouchableOpacity>
 
     </View>

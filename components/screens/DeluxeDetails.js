@@ -10,7 +10,7 @@ const DeluxeDetails = ({ navigation, route }) => {
       <Text style={styles.header}>Deluxe</Text>
 
         <Text style={{marginTop: 10, fontWeight: '600', marginLeft: 5}}>Details</Text>
-        <Image source={{uri: route.paramms(coverImage)}} style={styles.img1} />
+       
       
         <Text style={styles.title}>Details</Text>
 

@@ -11,7 +11,7 @@ const SuiteDetails = ({ navigation }) => {
       <Text style={styles.header}>Suite</Text>
 
         <Text style={{marginTop: 10, fontWeight: 'bold', marginLeft: 5, fontSize: 15}}>Details</Text>
-        <Image source={require('../../assets/Images/suite.jpg')} style={styles.img1} />
+       
         
       
         <Text style={styles.title}>Details</Text>

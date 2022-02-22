@@ -11,17 +11,21 @@ const ResetPassword = ({ navigation }) => {
   const [resetEmail, setResetEmail] = useState ('')
   return (
     <View style={styles.container}>
-        <Card>
-          <Image source={require('../../assets/Images/Bon Hotel.jpg')} style={styles.img} />
-          <Text style={styles.header}>BON Hotel</Text>
-        </Card>
+        <Card style={styles.main}>
+        <Text style={styles.header}>BON Hotel</Text>
+        <Image
+          source={require('../../assets/Images/beach hotel.jpeg')}
+          style={styles.img}
+        />
+
+      </Card>
 
         <View>
             <Text style={styles.head}>Reset Password</Text>
            
             <TextInput
                 placeholder='Email'
-                style={styles.placeholder}
+                style={styles.input}
                 onChangeText={(email) => setEmail(email)}
             />
 
@@ -42,33 +46,42 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     padding: 8,
   },
-    img: {
-    width: 300,
-    height: 300,
-    marginTop: 5,
-    borderRadius: 20,
+  img: {
+    width: 313,
+    height: 689,
+    borderBottomLeftRadius: 35,
+    borderBottomRightRadius: 35,
+    borderTopRightRadius: 5,
+    borderTopLeftRadius: 5
   },
-   header: {
+  header: {
     marginTop: -50,
     fontSize: 30,
     position: 'relative',
-    color: '#fff',
+    color: '#2666CF',
     textAlign: 'center',
     fontWeight: 'bold',
+  },
+  main: {
+    alignContent: 'center',
+    justifyContent: 'center',
+    marginBottom: -520,
+    marginTop: 80,
   },
    head: {
       fontSize: 25,
       fontWeight: 'bold',
       marginTop: 30,
+      marginLeft: 50
     },
-    placeholder: {
-      width: 258,
-      backgroundColor: '#ecf0f1',
-      height: 42,
-      marginTop: 45,
-      borderRadius: 20,
-      paddingLeft: 15,
-      color: 'black'
+    input: {
+      width: 300,
+      marginTop: 30,
+      borderRadius: 10,
+      height: 50,
+      backgroundColor: '#B2F9FC',
+      position: 'relative',
+      left: 6
     },
     btn: {
       backgroundColor: '#146BEE',

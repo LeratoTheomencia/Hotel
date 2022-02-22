@@ -45,12 +45,13 @@ const Login = ({ navigation }) => {
 
   return (
     <View style={styles.container}>
-      <Card>
+      <Card style={styles.main}>
+        <Text style={styles.header}>BON Hotel</Text>
         <Image
-          source={require('../../assets/Images/Bon Hotel.jpg')}
+          source={require('../../assets/Images/beach hotel.jpeg')}
           style={styles.img}
         />
-        <Text style={styles.header}>BON Hotel</Text>
+
       </Card>
 
       <TextInput
@@ -67,21 +68,24 @@ const Login = ({ navigation }) => {
       />
 
       <View>
-        <TouchableOpacity>
+        <TouchableOpacity style={styles.maintitle}>
           <Text
             style={styles.title}
             onPress={() => navigation.navigate('ResetPassword')}>
-            Forgot Password                                         
+            Forgot Password
           </Text>
         </TouchableOpacity>
-
-         <TouchableOpacity style={styles.button} onPress={SignIn}>
-        <Text style={styles.btn}>Login</Text>
-      </TouchableOpacity>
+      </View>
+      <View>
+        <TouchableOpacity style={styles.button} onPress={SignIn}>
+          <Text style={styles.btn}>Login</Text>
+        </TouchableOpacity>
       </View>
 
-      <View style={styles.main}>
-        <Text>
+
+
+      <View style={{ marginLeft: 30, marginTop: 10 }}>
+        <Text style={{ fontWeight: 'bold' }}>
           Don't have an account?{' '}
           <TouchableOpacity
             style={styles.text}
@@ -96,60 +100,73 @@ const Login = ({ navigation }) => {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
     backgroundColor: '#fff',
-    padding: 8,
   },
+
   img: {
-    width: 300,
-    height: 300,
-    marginTop: 5,
-    borderRadius: 20,
+    width: 313,
+    height: 689,
+    borderBottomLeftRadius: 35,
+    borderBottomRightRadius: 35,
+    borderTopRightRadius: 5,
+    borderTopLeftRadius: 5
   },
   header: {
     marginTop: -50,
     fontSize: 30,
     position: 'relative',
-    color: '#fff',
+    color: '#2666CF',
     textAlign: 'center',
     fontWeight: 'bold',
   },
-  input: {
-    marginTop: 30,
-    alignItems: 'center',
+  main: {
+    alignContent: 'center',
     justifyContent: 'center',
-    paddingLeft: 10,
+    marginBottom: -520,
+    marginTop: 80,
+  },
+  input: {
+    width: 300,
+    marginTop: 30,
     borderRadius: 10,
     height: 50,
-    backgroundColor: '#ecf0f1',
+    backgroundColor: '#B2F9FC',
+    position: 'relative'
+  },
+  maintitle:{
+    marginTop: 30,
+    marginLeft: 40
   },
   title: {
-    paddingLeft: 180,
-    color: '#146BEE',
-    fontWeight: 500,
+    position: 'relative',
+    paddingLeft: 120,
+    marginTop: 30,
+    fontSize: 12,
+    marginTop: -10,
+    color: '#2666CF',
+    fontWeight: '1000'
   },
   button: {
     marginTop: 30,
-    alignItems: 'center',
-    justifyContent: 'center',
-    borderRadius: 80,
-    height: 40,
-    width: 120,
-    backgroundColor: '#146BEE',
-    marginLeft: 100,
+
   },
   btn: {
-    fontWeight: 'bold',
-    fontSize: 18,
+    backgroundColor: '#146BEE',
+    borderRadius: 80,
+    width: 90,
+    height: 40,
+    textAlign: 'center',
+    padding: 8,
     color: '#fff',
+    fontWeight: '700'
   },
-  main: {
-    marginTop: 10,
-    paddingLeft: 25,
-  },
+
   text: {
-    color: '#146BEE',
-    fontWeight: 500
+    color: '#2666CF',
+    marginTop: 20,
+    fontWeight: '700'
   },
 });
 

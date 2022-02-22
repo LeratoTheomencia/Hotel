@@ -30,11 +30,17 @@ const navsign =()=>{
   return (
     <View style={styles.container}>
         
-        <Card>
-          <Image source={require('../../assets/Images/Bon Hotel.jpg')} style={styles.img} />
-          <Text style={styles.header}>BON Hotel</Text>
-        </Card>
+        <Card style={styles.main}>
+        <Text style={styles.header}>BON Hotel</Text>
+        <Image
+          source={require('../../assets/Images/beach hotel.jpeg')}
+          style={styles.img}
+        />
 
+      </Card>
+        <View>
+          
+        </View>
         <TextInput
             style={styles.input}
             placeholder= "Full Name"
@@ -70,33 +76,40 @@ const navsign =()=>{
 
 export default Signup ;
 const styles = StyleSheet.create({
-    container: {
-    flex: 1,
+  container: {
+    alignItems: 'center',
+    justifyContent: 'center',
     backgroundColor: '#fff',
-    padding: 8,
   },
-    img: {
-    width: 300,
-    height: 300,
-    marginTop: 5,
-    borderRadius: 20,
+  img: {
+    width: 313,
+    height: 689,
+    borderBottomLeftRadius: 35,
+    borderBottomRightRadius: 35,
+    borderTopRightRadius: 5,
+    borderTopLeftRadius: 5
   },
-    header: {
+  header: {
     marginTop: -50,
     fontSize: 30,
     position: 'relative',
-    color: '#fff',
+    color: '#2666CF',
     textAlign: 'center',
     fontWeight: 'bold',
   },
-    input: {
-    marginTop: 30,
-    alignItems: 'center',
+  main: {
+    alignContent: 'center',
     justifyContent: 'center',
-    paddingLeft: 10,
-    borderRadius: 10,
-    height: 50,
-    backgroundColor: '#ecf0f1',
+    marginBottom: -520,
+    marginTop: 80,
+  },
+    input: {
+      width: 300,
+      marginTop: 30,
+      borderRadius: 10,
+      height: 50,
+      backgroundColor: '#B2F9FC',
+      position: 'relative',
   },
     button: {
     marginTop: 30,

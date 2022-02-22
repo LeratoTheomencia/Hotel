@@ -6,7 +6,8 @@ import { db } from './Firebase/Firebase/Conflig';
 const Home = ({ navigation, route }) => {
 
   const [rooms, setRooms] = useState([]);
-  const [presidentialRooms, setPresidentialRooms] = useState([]);
+  const [standardRooms, setStandardRooms] = useState([]);
+  const [suiteRooms, setSuiteRooms] = useState([]);
   const getRooms = (() => {
 
     db.collection('Rooms').onSnapshot((snapShot) => {
@@ -19,16 +20,26 @@ const Home = ({ navigation, route }) => {
     })
 
 
-    db.collection('Presidential').onSnapshot((snapShot) => {
+    db.collection('Standard').onSnapshot((snapShot) => {
       const dis = snapShot.docs.map((doc) => ({
         id: doc.id,
         ...doc.data(),
       }));
-      setPresidentialRooms(dis);
-      console.log(presidentialRooms)
+      setStandardRooms(dis);
+      console.log(standardRooms)
     })
 
   })
+
+  db.collection('Suite').onSnapshot((snapShot) => {
+    const dis = snapShot.docs.map((doc) => ({
+      id: doc.id,
+      ...doc.data(),
+    }));
+    setSuiteRooms(dis);
+    console.log(suiteRooms)
+  })
+
 
   useEffect(() => {
     getRooms()
@@ -65,11 +76,24 @@ const Home = ({ navigation, route }) => {
 
       })}
 
-      {presidentialRooms.map((data) => {
+      {standardRooms.map((data) => {
         return (
           <View>
-            <Text style={{ marginTop: 20 }}>Presidential</Text>
-            <TouchableOpacity onPress={() => navigation.navigate('DeluxeDetails', data)} >
+            <Text style={{ marginTop: 20 }}>Standard</Text>
+            <TouchableOpacity onPress={() => navigation.navigate('StandardDetails', data)} >
+              <Image source={{uri:data.coverImage}} style={styles.img1} />
+              <Text>{data.price}</Text>
+            </TouchableOpacity>
+          </View>
+        )
+
+      })}
+
+{suiteRooms.map((data) => {
+        return (
+          <View>
+            <Text style={{ marginTop: 20 }}>Suite</Text>
+            <TouchableOpacity onPress={() => navigation.navigate('SuiteDetails', data)} >
               <Image source={{uri:data.coverImage}} style={styles.img1} />
               <Text>{data.price}</Text>
             </TouchableOpacity>
@@ -87,7 +111,8 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    padding: 8,
+    justifyContent: 'center',
+    alignItems: 'center'
   },
   bell: {
     marginLeft: 260,
