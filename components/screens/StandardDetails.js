@@ -10,6 +10,8 @@ const StandardDetails = ({ navigation }) =>{
       
       <Text style={styles.header}>Standard</Text>
 
+      <Image source={require('../../assets/Images/standard 1.png')} style={styles.img} />
+
         <Text style={{marginTop: 10, fontWeight: 'bold', marginLeft: 5, fontSize: 15}}>Details</Text>
         
       
@@ -72,35 +74,50 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     textAlign: 'center'
   },
+  img: {
+    width: 400,
+    height: 300,
+    borderRadius: 20,
+    justifyContent: 'center',
+    alignSelf: 'center'
+   
+  },
   title: {
     fontSize: 20,
     fontWeight: 'bold',
     marginTop: 15,
-    paddingLeft: 5
+    marginLeft: 10
   },
   main: {
     marginTop: 10,
-    paddingLeft: 10,
+    marginLeft: 10,
   },
   bbq: {
     marginLeft: 5,
+    width: 50,
+    height: 50
     
   },
   wifi: {
-    marginLeft: 100,
+    marginLeft: 40,
+    width: 50,
+    height: 50
    
   },
   snowflake: {
-    marginLeft: 60,
+    marginLeft: 70,
+    width: 50,
+    height: 50
   
   },
   text: {
     fontSize: 15,
     fontWeight: 600,
+    marginLeft: 10,
     
   },
   price: {
-    paddingLeft: 10,
+    marginLeft: 10,
     marginTop: 20
   },
     button: {
@@ -111,16 +128,13 @@ const styles = StyleSheet.create({
     height: 40,
     width: 120,
     backgroundColor: '#146BEE',
-    marginLeft: 100
+    marginLeft: 400
   },
   btn: {
     fontWeight: 'bold',
     fontSize: 18,
     color: '#fff',
   },
-  img1: {
-    marginLeft: 10
-  }, 
     img1: {
     marginTop: 5,
     borderRadius: 10,

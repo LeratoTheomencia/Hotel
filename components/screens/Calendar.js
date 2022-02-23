@@ -43,7 +43,7 @@ const App = ({navigation}) => {
       
 
                  <TouchableOpacity style={styles.button}>
-                  <Text style={styles.btn}onPress={() => navigation.navigate('Form')}>Next</Text>
+                  <Text style={styles.btn}onPress={() => navigation.navigate('Bookings')}>Next</Text>
               </TouchableOpacity>
     </View>
   )
@@ -54,6 +54,8 @@ const styles = StyleSheet.create({
     flex: 1,
     marginTop: 10,
     padding: 8,
+    justifyContent: 'center',
+    alignItems: 'center'
   },
    dates: {
    flexDirection: 'row',

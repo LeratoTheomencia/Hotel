@@ -59,6 +59,8 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff',
     padding: 8,
+    justifyContent: 'center',
+    alignItems: 'center'
   },
   sittingroom: {
     width: 320,

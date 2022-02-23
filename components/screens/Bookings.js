@@ -5,28 +5,17 @@ import Constants from 'expo-constants';
 import { Card } from 'react-native-paper';
 import {firebase} from './Firebase/Firebase/Conflig';
 import { Ionicons } from '@expo/vector-icons';
+import { RadioButton } from 'react-native-paper';
 
 
 
-function MyCheckbox({
-  checked,
-  onChange ,
-}) {
-  function onCheckmarkPress() {
-    onChange(!checked);
-  }
 
-  return (
-    <Pressable
-      style={[styles.checkboxBase, checked && styles.checkboxChecked]}
-      onPress={onCheckmarkPress}>
-      {checked && <Ionicons name="checkmark" size={24} color="white" />}
-    </Pressable>
-  );
-}
-
-const Form = ({ navigation }) => {
-  const [checked, onChange] = useState(false)
+const Bookings = ({ navigation }) => {
+  
+  const [checked, setChecked] = React.useState('first');
+  const [fullName, setFullName] = React.useState('');
+  const [email, setEmail] = React.useState('');
+  const [phone, setPhone] = React.useState('');
   return (
     <View style={styles.container}>
       <View style={styles.mainText}>
@@ -78,24 +67,25 @@ const Form = ({ navigation }) => {
         </View>
 
         <View style={styles.checkboxContainer}>
-    
-      <MyCheckbox 
-        checked={checked}
-        onChange={onChange}
+        <Text>Deluxe</Text>
+        <RadioButton
+        value="first"
+        status={ checked === 'first' ? 'checked' : 'unchecked' }
+        onPress={() => setChecked('first')}
       />
-        <Text style={styles.checkboxLabel}>Deluxe</Text>
+      <Text>Standard</Text>
+      <RadioButton
+        value="second"
+        status={ checked === 'second' ? 'checked' : 'unchecked' }
+        onPress={() => setChecked('second')}
+      />
+      <Text>Suite</Text>
+      <RadioButton
+        value="third"
+        status={ checked === 'third' ? 'checked' : 'unchecked' }
+        onPress={() => setChecked('third')}
+      />
 
-        <MyCheckbox 
-        checked={checked}
-        onChange={onChange}
-      />
-        <Text style={styles.checkboxLabel}>Standard</Text>
-
-        <MyCheckbox 
-        checked={checked}
-        onChange={onChange}
-      />
-        <Text style={styles.checkboxLabel}>Suite</Text>
         </View>
                     <TextInput 
               style={styles.input}
@@ -116,7 +106,7 @@ const Form = ({ navigation }) => {
           />
 
                            <TouchableOpacity style={styles.button}>
-                  <Text style={styles.btn} onPress={() => navigation.navigate('Home')}>Confirm</Text>
+                  <Text style={styles.btn} onPress={() => navigation.navigate('Conclude')}>Confirm</Text>
               </TouchableOpacity>
 
     </View>
@@ -127,6 +117,7 @@ const styles = StyleSheet.create({
    container: {
      flex: 1,
     justifyContent: 'center',
+    alignItems: 'center',
     backgroundColor: '#fff',
   },
   mainText: {
@@ -186,4 +177,4 @@ checkboxBase: {
   },
 });
 
-export default Form
+export default Bookings

@@ -4,7 +4,6 @@ import {
   View,
   StyleSheet,
   Image,
-  TextInput,
   TouchableOpacity,
 } from 'react-native';
 import Constants from 'expo-constants';
@@ -18,10 +17,12 @@ const Conclude = ({ navigation }) => {
     <View style={styles.container}>
     <View style={styles.main}>
 
-    <Text style={styles.text}>Thank you for choosing BON Hotel</Text>
+      <Image source={require('../../assets/Images/beach hotel.jpeg')} style={styles.img} />
+
+    <Text style={styles.text}></Text>
 
     <TouchableOpacity>
-      <Text style={styles.header} onPress={() => navigation.navigate('Home')}>DONE!</Text>
+      <Text style={styles.text} onPress={() => navigation.navigate('Home')}>DONE!</Text>
     </TouchableOpacity>
     </View>
     </View>
@@ -30,26 +31,32 @@ const Conclude = ({ navigation }) => {
 
 const styles = StyleSheet.create({
     container: {
-    flex: 1,
-    backgroundColor: '#daa520',
-    padding: 8,
+      alignItems: 'center',
+      justifyContent: 'center',
+      backgroundColor: '#fff',
+  },  
+  img: {
+    width: 880,
+    height: 689,
+    borderBottomLeftRadius: 35,
+    borderBottomRightRadius: 35,
+    borderTopRightRadius: 5,
+    borderTopLeftRadius: 5
   },
-  header: {
-    fontSize: 20,
-    fontWeight: 'bold',
-    color: '#146BEE',
-    textAlign: 'center',
-    marginTop: 20,
-  }, 
   main: {
-    marginVertical: 300
-  }, 
+    alignContent: 'center',
+    justifyContent: 'center',
+    marginBottom: -520,
+    marginTop: 80,
+  },
   text: {
-    fontSize: 18,
+    fontSize: 45,
     fontWeight: 'bold',
     color: '#146BEE',
     textAlign: 'center',
-  }
+    marginBottom: -300
+  },
+ 
 })
 
 export default Conclude;

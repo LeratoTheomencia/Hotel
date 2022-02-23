@@ -9,8 +9,7 @@ const DeluxeDetails = ({ navigation, route }) => {
       
       <Text style={styles.header}>Deluxe</Text>
 
-        <Text style={{marginTop: 10, fontWeight: '600', marginLeft: 5}}>Details</Text>
-       
+      <Image source={require('../../assets/Images/deluxe.png')} style={styles.img} />
       
         <Text style={styles.title}>Details</Text>
 
@@ -30,7 +29,7 @@ const DeluxeDetails = ({ navigation, route }) => {
         <Text style={styles.text}>R880 per night</Text>
       </View>  
 
-        <View style={{flexDirection:'row', marginTop: 50}}>
+        <View style={{flexDirection:'row', marginTop: 50, alignItems: 'center'}}>
                <Image source={require('../../assets/Images/icons8-weber-30.png')} style={styles.bbq} />
 
                <Image source={require('../../assets/Images/icons8-wi-fi-connected-30.png')} style={styles.wifi} />
@@ -71,35 +70,50 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     textAlign: 'center'
   },
+  img: {
+    width: 400,
+    height: 300,
+    borderRadius: 20,
+    justifyContent: 'center',
+    alignSelf: 'center'
+   
+  },
   title: {
     fontSize: 20,
     fontWeight: 'bold',
     marginTop: 15,
-    paddingLeft: 5
+    marginLeft: 10
   },
   main: {
     marginTop: 10,
-    paddingLeft: 10,
+    marginLeft: 10,
   },
   bbq: {
     marginLeft: 5,
+    width: 50,
+    height: 50
     
   },
   wifi: {
-    marginLeft: 100,
+    marginLeft: 40,
+    width: 50,
+    height: 50
    
   },
   snowflake: {
-    marginLeft: 60,
+    marginLeft: 70,
+    width: 50,
+    height: 50
   
   },
   text: {
     fontSize: 15,
     fontWeight: 600,
+    marginLeft: 10,
     
   },
   price: {
-    paddingLeft: 10,
+    marginLeft: 10,
     marginTop: 20
   },
     button: {
@@ -110,7 +124,7 @@ const styles = StyleSheet.create({
     height: 40,
     width: 120,
     backgroundColor: '#146BEE',
-    marginLeft: 100
+    marginLeft: 400
   },
   btn: {
     fontWeight: 'bold',
