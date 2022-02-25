@@ -106,7 +106,7 @@ const Bookings = ({ navigation }) => {
           />
 
                            <TouchableOpacity style={styles.button}>
-                  <Text style={styles.btn} onPress={() => navigation.navigate('Conclude')}>Confirm</Text>
+                  <Text style={styles.btn} onPress={() => navigation.navigate('Maps')}>Confirm</Text>
               </TouchableOpacity>
 
     </View>

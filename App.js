@@ -82,6 +82,10 @@ export default function App() {
           name="SuiteDetails"
           component={SuiteDetails}
         />
+           <Stack.Screen
+          name="Maps"
+          component={Maps}
+        />
 
         <Stack.Screen
           name="Conclude"

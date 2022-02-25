@@ -10,7 +10,11 @@ const StandardDetails = ({ navigation }) =>{
       
       <Text style={styles.header}>Standard</Text>
 
-      <Image source={require('../../assets/Images/standard 1.png')} style={styles.img} />
+      <Image source={require('../../assets/standard.jpg')} style={styles.img} />
+      
+      <TouchableOpacity>
+        <Text>View</Text>
+      </TouchableOpacity>
 
         <Text style={{marginTop: 10, fontWeight: 'bold', marginLeft: 5, fontSize: 15}}>Details</Text>
         
@@ -31,7 +35,8 @@ const StandardDetails = ({ navigation }) =>{
       <View style={styles.price}>
         <Text style={styles.text}>Price:</Text>
         <Text style={styles.text}>R1000 per night</Text>
-      </View>  
+      </View> 
+ 
 
         <View style={{flexDirection:'row', marginTop: 50}}>
                <Image source={require('../../assets/Images/icons8-weber-30.png')} style={styles.bbq} />
@@ -128,7 +133,7 @@ const styles = StyleSheet.create({
     height: 40,
     width: 120,
     backgroundColor: '#146BEE',
-    marginLeft: 400
+    marginLeft: 100
   },
   btn: {
     fontWeight: 'bold',

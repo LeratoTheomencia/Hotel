@@ -10,6 +10,12 @@ const SuiteDetails = ({ navigation }) => {
       
       <Text style={styles.header}>Suite</Text>
 
+      <Image source={require('../../assets/suite room.jpg')} />
+
+      <TouchableOpacity>
+        <Text>View</Text>
+      </TouchableOpacity>-
+
         <Text style={{marginTop: 10, fontWeight: 'bold', marginLeft: 5, fontSize: 15}}>Details</Text>
        
         
@@ -24,9 +30,10 @@ const SuiteDetails = ({ navigation }) => {
         <Text style={styles.text}>Televevion</Text>
         <Text style={styles.text}>Balcony</Text>
         <Text style={styles.text}>Free Breakfast</Text>
-               <Text style={styles.text}>Fire place</Text>
-                              <Text style={styles.text}>Pools (indoor & outdoor)</Text>
+        <Text style={styles.text}>Fire place</Text>
+        <Text style={styles.text}>Pools (indoor & outdoor)</Text>
       </View>
+      
 
       <View style={styles.price}>
         <Text style={styles.text}>Price:</Text>
@@ -128,7 +135,7 @@ const styles = StyleSheet.create({
     height: 40,
     width: 120,
     backgroundColor: '#146BEE',
-    marginLeft: 400
+    marginLeft: 100
   },
   btn: {
     fontWeight: 'bold',

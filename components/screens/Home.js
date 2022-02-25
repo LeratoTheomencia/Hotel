@@ -16,11 +16,11 @@ const Home = ({ navigation, route }) => {
         ...doc.data(),
       }));
       setRooms(dis);
-      console.log(rooms)
+      console.log(deluxe)
     })
 
 
-    db.collection('Standard').onSnapshot((snapShot) => {
+    db.collection('Rooms').onSnapshot((snapShot) => {
       const dis = snapShot.docs.map((doc) => ({
         id: doc.id,
         ...doc.data(),
@@ -31,7 +31,7 @@ const Home = ({ navigation, route }) => {
 
   })
 
-  db.collection('Suite').onSnapshot((snapShot) => {
+  db.collection('Rooms').onSnapshot((snapShot) => {
     const dis = snapShot.docs.map((doc) => ({
       id: doc.id,
       ...doc.data(),
@@ -66,11 +66,14 @@ const Home = ({ navigation, route }) => {
       {rooms.map((data) => {
         return (
           <View>
-            <Text style={{ marginTop: 20 }}>Deluxe</Text>
+            <Text style={{ marginTop: 20, marginLeft: 10, textAlign: 'center' }}>Deluxe</Text>
             <TouchableOpacity onPress={() => navigation.navigate('DeluxeDetails', data)} >
-              <Image source={require('../../assets/Images/deluxe.jpg')} style={styles.img1} />
-              <Text>{data.price}</Text>
-            </TouchableOpacity>
+              <Image source={(data.image)} style={styles.img1} />
+              </TouchableOpacity>
+              <View>
+              <Text style={{marginLeft: 10}}>{data.price}</Text>
+              <Text style={{marginLeft: 10}}>{data.description}</Text>
+              </View>
           </View>
         )
 
@@ -79,11 +82,14 @@ const Home = ({ navigation, route }) => {
       {standardRooms.map((data) => {
         return (
           <View>
-            <Text style={{ marginTop: 20 }}>Standard</Text>
+            <Text style={{ marginTop: 20, marginLeft: 10 }}>Standard</Text>
             <TouchableOpacity onPress={() => navigation.navigate('StandardDetails', data)} >
               <Image source={{uri:data.coverImage}} style={styles.img1} />
-              <Text>{data.price}</Text>
-            </TouchableOpacity>
+              </TouchableOpacity>
+              <View>
+              <Text style={{marginLeft: 10}}>{data.price}</Text>
+              <Text style={{marginLeft: 10}}>{data.description}</Text>
+              </View>
           </View>
         )
 
@@ -92,11 +98,14 @@ const Home = ({ navigation, route }) => {
 {suiteRooms.map((data) => {
         return (
           <View>
-            <Text style={{ marginTop: 20 }}>Suite</Text>
+            <Text style={{ marginTop: 20, marginLeft: 10 }}>Suite</Text>
             <TouchableOpacity onPress={() => navigation.navigate('SuiteDetails', data)} >
               <Image source={{uri:data.coverImage}} style={styles.img1} />
-              <Text>{data.price}</Text>
-            </TouchableOpacity>
+              </TouchableOpacity>
+              <View>
+              <Text style={{marginLeft: 10}}>{data.price}</Text>
+              <Text style={{marginLeft: 10}}>{data.description}</Text>
+              </View>
           </View>
         )
 
@@ -138,19 +147,8 @@ const styles = StyleSheet.create({
     marginTop: 10,
     width: 260,
     height: 150,
-    left: 10
-  },
-  img2: {
-    marginTop: 10,
-    width: 260,
-    height: 150,
-    left: 10
-  },
-  img3: {
-    marginTop: 10,
-    width: 260,
-    height: 150,
-    left: 10
+    left: 30, 
+    alignItems: 'center'
   },
 });
 

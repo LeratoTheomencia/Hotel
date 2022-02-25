@@ -10,6 +10,10 @@ const DeluxeDetails = ({ navigation, route }) => {
       <Text style={styles.header}>Deluxe</Text>
 
       <Image source={require('../../assets/Images/deluxe.png')} style={styles.img} />
+
+      <TouchableOpacity>
+        <Text style={{marginLeft: 300, marginTop: 20}}>View</Text>
+      </TouchableOpacity>
       
         <Text style={styles.title}>Details</Text>
 
@@ -71,7 +75,7 @@ const styles = StyleSheet.create({
     textAlign: 'center'
   },
   img: {
-    width: 400,
+    width: 300,
     height: 300,
     borderRadius: 20,
     justifyContent: 'center',
@@ -124,7 +128,7 @@ const styles = StyleSheet.create({
     height: 40,
     width: 120,
     backgroundColor: '#146BEE',
-    marginLeft: 400
+    marginLeft: 100
   },
   btn: {
     fontWeight: 'bold',
