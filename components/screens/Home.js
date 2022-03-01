@@ -72,7 +72,6 @@ const Home = ({ navigation, route }) => {
               </TouchableOpacity>
               <View>
               <Text style={{marginLeft: 10}}>{data.price}</Text>
-              <Text style={{marginLeft: 10}}>{data.description}</Text>
               </View>
           </View>
         )
@@ -82,13 +81,12 @@ const Home = ({ navigation, route }) => {
       {standardRooms.map((data) => {
         return (
           <View>
-            <Text style={{ marginTop: 20, marginLeft: 10 }}>Standard</Text>
+            <Text style={{ marginTop: 20, marginLeft: 10, textAlign: 'center' }}>Standard</Text>
             <TouchableOpacity onPress={() => navigation.navigate('StandardDetails', data)} >
               <Image source={{uri:data.coverImage}} style={styles.img1} />
               </TouchableOpacity>
               <View>
               <Text style={{marginLeft: 10}}>{data.price}</Text>
-              <Text style={{marginLeft: 10}}>{data.description}</Text>
               </View>
           </View>
         )
@@ -98,7 +96,7 @@ const Home = ({ navigation, route }) => {
 {suiteRooms.map((data) => {
         return (
           <View>
-            <Text style={{ marginTop: 20, marginLeft: 10 }}>Suite</Text>
+            <Text style={{ marginTop: 20, marginLeft: 10, textAlign: 'center' }}>Suite</Text>
             <TouchableOpacity onPress={() => navigation.navigate('SuiteDetails', data)} >
               <Image source={{uri:data.coverImage}} style={styles.img1} />
               </TouchableOpacity>

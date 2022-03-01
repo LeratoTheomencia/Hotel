@@ -100,8 +100,8 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff',
   },
-    header: {
-    marginTop: 5,
+  header: {
+    marginTop: 30,
     marginLeft: 5,
     fontSize: 20,
     fontWeight: 'bold',

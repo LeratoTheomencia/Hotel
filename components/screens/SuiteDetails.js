@@ -91,8 +91,8 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff',
   },
-    header: {
-    marginTop: 5,
+  header: {
+    marginTop: 30,
     marginLeft: 5,
     fontSize: 20,
     fontWeight: 'bold',
@@ -102,9 +102,6 @@ const styles = StyleSheet.create({
     width: 300,
     height: 220,
     borderRadius: 20,
-    justifyContent: 'center',
-    alignSelf: 'center'
-   
   },
   title: {
     fontSize: 20,
