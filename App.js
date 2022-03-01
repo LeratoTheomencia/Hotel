@@ -13,7 +13,7 @@ import About from './components/screens/About';
 import Bookings from './components/screens/Bookings';
 import Calendar from './components/screens/Calendar';
 import Maps from './components/screens/Maps';
-//import Deluxe from './components/screens/Deluxe';
+//import DeluxeRoom from './components/screens/DeluxeRoom';
 import DeluxeDetails from './components/screens/DeluxeDetails';
 //import Standard from './components/screens/Standard';
 import StandardDetails from './components/screens/StandardDetails';
@@ -29,9 +29,13 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator>
 
+          
+    
+
         <Stack.Screen
           name="login"
-          component={Login} />
+          component={Login}
+        />
 
         <Stack.Screen
           name="signup"
@@ -65,24 +69,16 @@ export default function App() {
         />
 
 
-
         <Stack.Screen
           name="DeluxeDetails"
           component={DeluxeDetails}
         />
 
-
-        <Stack.Screen
-          name="StandardDetails"
-          component={StandardDetails}
-        />
-
-
         <Stack.Screen
           name="SuiteDetails"
           component={SuiteDetails}
         />
-           <Stack.Screen
+        <Stack.Screen
           name="Maps"
           component={Maps}
         />

@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyleSheet, Text, View, Image, TouchableOpacity, } from 'react-native';
+import {StyleSheet, Text, View, Image, TouchableOpacity, ScrollView } from 'react-native';
 
 
 
@@ -10,7 +10,35 @@ const StandardDetails = ({ navigation }) =>{
       
       <Text style={styles.header}>Standard</Text>
 
-      <Image source={require('../../assets/standard.jpg')} style={styles.img} />
+      <ScrollView style={{ flex: 1 }}
+        pagingEnabled={true}
+        horizontal={true}
+        scrollEventThrottle={16} >
+
+        <View>
+          <Image source={require('../../assets/Rooms/standard-bedroom.jpg')} style={styles.img} />
+        </View>
+        <View>
+          <Image source={require('../../assets/Rooms/standard-full-room.jpg')} style={styles.img} />
+        </View>
+        <View>
+          <Image source={require('../../assets/Rooms/Standard-Twin-1.jpg')} style={styles.img} />
+        </View>
+        <View>
+          <Image source={require('../../assets/Rooms/standard.jpg')} style={styles.img} />
+        </View>
+        <View>
+          <Image source={require('../../assets/Rooms/gym.jpg')} style={styles.img} />
+        </View>
+        <View>
+          <Image source={require('../../assets/Rooms/baffe.jpg')} style={styles.img} />
+        </View>
+        <View>
+          <Image source={require('../../assets/Images/outdoor pool.jpeg')} style={styles.img} />
+        </View>
+      </ScrollView>
+    
+        
       
       <TouchableOpacity>
         <Text>View</Text>
@@ -80,8 +108,8 @@ const styles = StyleSheet.create({
     textAlign: 'center'
   },
   img: {
-    width: 400,
-    height: 300,
+    width: 300,
+    height: 200,
     borderRadius: 20,
     justifyContent: 'center',
     alignSelf: 'center'

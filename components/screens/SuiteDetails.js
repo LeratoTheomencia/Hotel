@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyleSheet, Text, View, Image, TouchableOpacity, } from 'react-native';
+import {StyleSheet, Text, View, Image, TouchableOpacity, ScrollView } from 'react-native';
 import{firebase} from './Firebase/Firebase/Conflig'
 
 
@@ -9,17 +9,34 @@ const SuiteDetails = ({ navigation }) => {
     
       
       <Text style={styles.header}>Suite</Text>
+      <ScrollView style={{ flex: 1 }}
+        pagingEnabled={true}
+        horizontal={true}
+        scrollEventThrottle={16} >
 
-      <Image source={require('../../assets/suite room.jpg')} />
+        <View>
+          <Image source={require('../../assets/Rooms/suite room.jpg')} style={styles.img} />
+        </View>
+        <View>
+          <Image source={require('../../assets/Rooms/suite-double-room.jpg')} style={styles.img} />
+        </View>
+        <View>
+          <Image source={require('../../assets/Rooms/suite-full-room.jpg')} style={styles.img} />
+        </View>
+        <View>
+          <Image source={require('../../assets/Rooms/suite-single-room.jpg')} style={styles.img} />
+        </View>
+        <View>
+          <Image source={require('../../assets/Rooms/suitte-master-bedroom.jpg')} style={styles.img} />
+        </View>
+        <View>
+          <Image source={require('../../assets/Rooms/suite-self-catering-apartment.jpg')} style={styles.img} />
+        </View>
+        <View>
+          <Image source={require('../../assets/Images/outdoor pool.jpeg')} style={styles.img} />
+        </View>
+      </ScrollView>
 
-      <TouchableOpacity>
-        <Text>View</Text>
-      </TouchableOpacity>-
-
-        <Text style={{marginTop: 10, fontWeight: 'bold', marginLeft: 5, fontSize: 15}}>Details</Text>
-       
-        
-      
         <Text style={styles.title}>Details</Text>
 
       <View style={styles.main}>
@@ -82,8 +99,8 @@ const styles = StyleSheet.create({
     textAlign: 'center'
   },
   img: {
-    width: 400,
-    height: 300,
+    width: 300,
+    height: 220,
     borderRadius: 20,
     justifyContent: 'center',
     alignSelf: 'center'
