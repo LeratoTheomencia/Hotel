@@ -16,7 +16,7 @@ const Home = ({ navigation, route }) => {
         ...doc.data(),
       }));
       setRooms(dis);
-      console.log(deluxe)
+      console.log(getRooms)
     })
 
 

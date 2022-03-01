@@ -6,6 +6,7 @@ import { Card } from 'react-native-paper';
 import {firebase} from './Firebase/Firebase/Conflig';
 import { Ionicons } from '@expo/vector-icons';
 import { RadioButton } from 'react-native-paper';
+import {services} from '../screens/Firebase/Firebase/dataService/services'
 
 
 

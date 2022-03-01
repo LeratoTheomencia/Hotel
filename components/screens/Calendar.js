@@ -20,7 +20,7 @@ const App = ({navigation}) => {
     </View>
     <p>Current selected date is <b>{moment(dateState).format('MMMM Do YYYY')}</b></p>
 
-     <Text style={{padding: 10}}>Dates</Text>
+    {/*} <Text style={{padding: 10}}>Dates</Text>
         <View style={styles.dates}>
         <Text>28 October 2021</Text>
         <Text>         31 October 2021</Text>
@@ -39,7 +39,7 @@ const App = ({navigation}) => {
 
         <Text style={{marginTop: 15, paddingLeft: 20, fontWeight: 500}}>Rooms</Text>
 
-        <Text style={{marginTop: 15, paddingLeft: 20}}>2 Bedrooms with a kicthen</Text>
+  <Text style={{marginTop: 15, paddingLeft: 20}}>2 Bedrooms with a kicthen</Text>*/}
       
 
                  <TouchableOpacity style={styles.button}>
