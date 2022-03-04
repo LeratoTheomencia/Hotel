@@ -74,6 +74,11 @@ export default function App() {
           component={DeluxeDetails}
         />
 
+<Stack.Screen
+          name="StandardDetails"
+          component={StandardDetails}
+        />
+
         <Stack.Screen
           name="SuiteDetails"
           component={SuiteDetails}

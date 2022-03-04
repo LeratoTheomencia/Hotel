@@ -1,9 +1,10 @@
 import React from 'react';
 import {StyleSheet, Text, View, Image, TouchableOpacity, ScrollView } from 'react-native';
+import{firebase} from './Firebase/Firebase/Conflig'
 
 
 
-const StandardDetails = ({ navigation }) =>{
+const StandardDetails = ({ navigation, route }) =>{
   return (
     <View style={styles.container}>
     
@@ -14,7 +15,6 @@ const StandardDetails = ({ navigation }) =>{
         pagingEnabled={true}
         horizontal={true}
         scrollEventThrottle={16} >
-
         <View>
           <Image source={require('../../assets/Rooms/standard-bedroom.jpg')} style={styles.img} />
         </View>
@@ -37,16 +37,7 @@ const StandardDetails = ({ navigation }) =>{
           <Image source={require('../../assets/Images/outdoor pool.jpeg')} style={styles.img} />
         </View>
       </ScrollView>
-    
-        
-      
-      <TouchableOpacity>
-        <Text>View</Text>
-      </TouchableOpacity>
 
-        <Text style={{marginTop: 10, fontWeight: 'bold', marginLeft: 5, fontSize: 15}}>Details</Text>
-        
-      
         <Text style={styles.title}>Details</Text>
 
       <View style={styles.main}>

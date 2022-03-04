@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { StyleSheet, View, Text, Image, TouchableOpacity, TextInput } from 'react-native';
-import { Card } from 'react-native-paper';
-import { firebase } from './Firebase/Firebase/Conflig';
+// import { Card } from 'react-native-paper';
+// import { firebase } from './Firebase/Firebase/Conflig';
 import { db } from './Firebase/Firebase/Conflig';
 const Home = ({ navigation, route }) => {
 
@@ -68,7 +68,7 @@ const Home = ({ navigation, route }) => {
           <View>
             <Text style={{ marginTop: 20, marginLeft: 10, textAlign: 'center' }}>Deluxe</Text>
             <TouchableOpacity onPress={() => navigation.navigate('DeluxeDetails', data)} >
-              <Image source={(data.image)} style={styles.img1} />
+              <Image source={(data.coverImage)} style={styles.img1} />
               </TouchableOpacity>
               <View>
               <Text style={{marginLeft: 10}}>{data.price}</Text>

@@ -1,4 +1,4 @@
-import { firebase } from '../dataService/services'
+{/*import { firebase } from '../dataService/services'
 
 
 const getBookings = (() => {
@@ -16,4 +16,4 @@ const getBookings = (() => {
     })
 
 
-})
+})*/}
