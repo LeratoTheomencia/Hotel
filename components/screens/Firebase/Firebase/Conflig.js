@@ -3,19 +3,18 @@ import "firebase/auth";
 import "firebase/firestore";
 
 
- var firebaseConfig = {
-  apiKey: "AIzaSyDHzQORdPlravGdy3S3zl3wIbvaHUOdJ7g",
-  authDomain: "hotel-app-practice.firebaseapp.com",
-  databaseURL: "https://hotel-app-practice-default-rtdb.firebaseio.com",
-  projectId: "hotel-app-practice",
-  storageBucket: "hotel-app-practice.appspot.com",
-  messagingSenderId: "234803791881",
-  appId: "1:234803791881:web:29eaba5c17e1c9435290d8",
-  measurementId: "G-ESY14SB6PM"
+var firebaseConfig = {
+  apiKey: "AIzaSyCNa2kh_M5TAI3hbFg4-gMvr6szHqifPMk",
+  authDomain: "hotel-app-d855c.firebaseapp.com",
+  projectId: "hotel-app-d855c",
+  storageBucket: "hotel-app-d855c.appspot.com",
+  messagingSenderId: "554175826699",
+  appId: "1:554175826699:web:fd5582b8c38e2cdd08b00e",
+  measurementId: "G-H1G0L0J5JM"
 };
   // Initialize Firebase
 
   
 const app = firebase.initializeApp(firebaseConfig)
-export const db = firebase.firestore(app)
+
 export {firebase}  

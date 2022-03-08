@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import {StyleSheet, View, Text, TouchableOpacity, TextInput, Image} from 'react-native'
 import Calendar from 'react-calendar';
 import moment from 'moment';
+import { Card } from 'react-native-paper';
 
 const App = ({navigation}) => {
 
@@ -11,6 +12,8 @@ const App = ({navigation}) => {
   }
   return (
     <View style={styles.container}>
+      
+    <Card style={styles.card}>
 
     <View style={styles.calender}>
       <Calendar
@@ -19,6 +22,9 @@ const App = ({navigation}) => {
       />
     </View>
     <p>Current selected date is <b>{moment(dateState).format('MMMM Do YYYY')}</b></p>
+
+    </Card>
+   
 
     {/*} <Text style={{padding: 10}}>Dates</Text>
         <View style={styles.dates}>
@@ -83,7 +89,18 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     padding: 3,
     color: '#fff'
-  }
+  },
+  card: {
+    borderColor: '#eee',
+    width: 420,
+    height: 300,
+    backgroundColor: '#fff',
+    marginLeft: 12,
+    marginTop: -15,
+    shadowRadius: 60,
+    borderTopRightRadius: 25,
+    borderBottomLeftRadius: 25
+  },
 });
 
 export default App;

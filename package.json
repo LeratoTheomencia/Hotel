@@ -15,7 +15,7 @@
     "expo-cli": "^4.13.0",
     "expo-constants": "~12.1.3",
     "expo-status-bar": "~1.1.0",
-    "firebase": "^8.2.3",
+    "firebase": "^8.10.1",
     "moment": "*",
     "react": "17.0.1",
     "react-calendar": "*",

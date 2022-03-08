@@ -29,8 +29,6 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator>
 
-          
-    
 
         <Stack.Screen
           name="login"
@@ -51,7 +49,6 @@ export default function App() {
           name="Home"
           component={Home}
         />
-
 
         <Stack.Screen
           name="Calender"
@@ -74,15 +71,7 @@ export default function App() {
           component={DeluxeDetails}
         />
 
-<Stack.Screen
-          name="StandardDetails"
-          component={StandardDetails}
-        />
 
-        <Stack.Screen
-          name="SuiteDetails"
-          component={SuiteDetails}
-        />
         <Stack.Screen
           name="Maps"
           component={Maps}

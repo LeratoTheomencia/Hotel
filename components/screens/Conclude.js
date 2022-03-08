@@ -22,7 +22,7 @@ const Conclude = ({ navigation }) => {
     <Text style={styles.text}></Text>
 
     <TouchableOpacity>
-      <Text style={styles.text} onPress={() => navigation.navigate('Home')}>THANK YOU!</Text>
+      <Text style={styles.text} onPress={() => navigation.navigate('Home')}>ENJOY YOUR STAY!</Text>
     </TouchableOpacity>
     </View>
     </View>

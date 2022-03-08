@@ -1,96 +1,70 @@
-import React from 'react';
-import { StyleSheet, Text, View, Image, TouchableOpacity, ScrollView } from 'react-native';
+import React, { useEffect, useState } from 'react';
+import { StyleSheet, Text, View, ScrollView, TouchableOpacity, Image } from 'react-native';
+//import { get } from 'react-native/Libraries/Utilities/PixelRatio';
+//import { useEffect } from 'react/cjs/react.production.min';
 import { db, firebase } from './Firebase/Firebase/Conflig';
-//import Slideshow from 'react-native-slideshow';
+import { Card } from 'react-native-paper';
 
 const DeluxeDetails = ({ navigation, route }) => {
-  return (
-    <View style={styles.container}>
 
+  const [rooms, setRooms] = useState([]);
+  const handleGetDirections = () => {}
+ 
 
-      <Text style={styles.header}>Deluxe</Text>
-
-      <ScrollView style={{ flex: 1 }}
-        pagingEnabled={true}
-        horizontal={true}
-        scrollEventThrottle={16} >
-        <View>
-          <Image source={require('../../assets/Rooms/Deluxe kING-1.JPG')} style={styles.img}  />
-        </View>
-        <View>
-          <Image source={require('../../assets/Rooms/deluxe single room.jpg')} style={styles.img} />
-        </View>
-        <View>
-          <Image source={require('../../assets/Rooms/deluxe-one-bedroom.jpg')} style={styles.img} />
-        </View>
-        <View>
-          <Image source={require('../../assets/Rooms/double-deluxe-room.jpg')} style={styles.img} />
-        </View>
-        <View>
-          <Image source={require('../../assets/Rooms/self-catering.jpg')} style={styles.img} />
-        </View>
-        <View>
-          <Image source={require('../../assets/Rooms/gym.jpg')} style={styles.img} />
-        </View>
-        <View>
-          <Image source={require('../../assets/Images/outdoor pool.jpeg')} style={styles.img} />
-        </View>
-      </ScrollView>
-
-
-
-      <Text style={styles.title}>Details</Text>
-
-      <View style={styles.main}>
-        <Text style={styles.text}>2 Bedroom</Text>
-        <Text style={styles.text}>Kitchen</Text>
-        <Text style={styles.text}>Bathroom with a shower</Text>
-        <Text style={styles.text}>Living Room</Text>
-        <Text style={styles.text}>Televevion</Text>
-        <Text style={styles.text}>Free Breakfast</Text>
-        <Text style={styles.text}>Pool</Text>
-        <Text style={styles.text}>Gym</Text>
+  {rooms.map((data) => {
+    return (
+      <View>
+        <Text style={{marginTop: 20, marginLeft: 10, textAlign: 'center'}}>Deluxe</Text>
+        <Text>{(data.description)}</Text>
       </View>
+    )
+  })}
 
+  return(
+    <View style={styles.contain}>
 
-      <View style={styles.price}>
-        <Text style={styles.text}>Price:</Text>
-        <Text style={styles.text}>R880 per night</Text>
-      </View>
+     
 
-      <View style={{ flexDirection: 'row', marginTop: 50, alignItems: 'center' }}>
-        <Image source={require('../../assets/Images/icons8-weber-30.png')} style={styles.bbq} />
+      
 
-        <Image source={require('../../assets/Images/icons8-wi-fi-connected-30.png')} style={styles.wifi} />
-        <Image source={require('../../assets/Images/icons8-snowflake-30.png')} style={styles.snowflake} />
-      </View>
+        <View>
+          <Image source={route.params.image} style={styles.img} />
+        </View>
+       
 
-      <View style={{ flexDirection: 'row' }}>
+    
 
-        <Text style={{ marginLeft: 10 }}>BBQ facility</Text>
-
-        <Text style={{ marginLeft: 20 }}>Free WiFi</Text>
-
-        <Text style={{ marginLeft: 40 }}>Air conditioning</Text>
-      </View>
-
-      <TouchableOpacity style={styles.button}>
+      <Card style={styles.card}>
+      
+        <Text style={styles.text}>{route.params.name}</Text>
+        <Text style={styles.text}>{route.params.description}</Text>
+        <Text style={styles.text}>{route.params.price}</Text>
+        <TouchableOpacity style={styles.button}>
         <Text style={styles.btn} onPress={() => navigation.navigate('Calender')}>Book Now</Text>
       </TouchableOpacity>
+      </Card>
 
-
-
-
+      <Card style={{marginTop: 10}}>
+      <Image source={require('../../assets/Images/bloem map.png')} style={styles.img} />
+             <TouchableOpacity
+          style={styles.paragraph}
+          onPress={() => navigation.navigate('Maps')}>
+         <Text style={{alignSelf:'center',marginTop:10,fontSize:16,fontWeight:'bold',color:'white'}}> Directions</Text>
+            </TouchableOpacity>
+      </Card>
+   
+      
 
     </View>
-
-  )
+  );
 }
 
+export default DeluxeDetails;
+
 const styles = StyleSheet.create({
-  container: {
+  contain:{
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#fff'
   },
   header: {
     marginTop: 30,
@@ -99,68 +73,54 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     textAlign: 'center'
   },
-  img: {
-    width: 300,
-    height: 200,
-    borderRadius: 20,
-    justifyContent: 'center',
-    alignSelf: 'center',
-    marginTop: 10
-
-  },
-  title: {
-    fontSize: 20,
-    fontWeight: 'bold',
+  img:{
+    width: 400,
+    height: 250,
+    borderRadius: 10,
     marginTop: 15,
-    marginLeft: 10
+    alignSelf: 'center'
+  },
+  card: {
+    borderColor: '#eee',
+    width: 420,
+    height: 200,
+    backgroundColor: '#fff',
+    marginLeft: 12,
+    marginTop: 15,
+    shadowRadius: 60,
+    borderTopRightRadius: 25,
+    borderBottomLeftRadius: 25
   },
   main: {
     marginTop: 10,
     marginLeft: 10,
-  },
-  bbq: {
-    marginLeft: 5,
-    width: 50,
-    height: 50
-
-  },
-  wifi: {
-    marginLeft: 40,
-    width: 50,
-    height: 50
-
-  },
-  snowflake: {
-    marginLeft: 70,
-    width: 50,
-    height: 50
-
-  },
-  text: {
-    fontSize: 15,
-    fontWeight: 600,
-    marginLeft: 10,
-
   },
   price: {
     marginLeft: 10,
     marginTop: 20
   },
   button: {
-    marginTop: 30,
+    marginTop: 10,
     alignItems: 'center',
     justifyContent: 'center',
     borderRadius: 80,
     height: 40,
     width: 120,
     backgroundColor: '#146BEE',
-    marginLeft: 100
+    marginLeft: 150
   },
   btn: {
     fontWeight: 'bold',
     fontSize: 18,
-    color: '#fff',
+    color: '#fff'
   },
-});
-
-export default DeluxeDetails;
+  paragraph: {
+  marginTop:5,
+  borderRadius:40,
+  borderWidth:0,
+  alignSelf:'center',
+  backgroundColor:'#EEC048',
+  width:150,
+  height:40
+},
+})

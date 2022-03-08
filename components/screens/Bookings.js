@@ -6,7 +6,7 @@ import { Card } from 'react-native-paper';
 import {firebase} from './Firebase/Firebase/Conflig';
 import { Ionicons } from '@expo/vector-icons';
 import { RadioButton } from 'react-native-paper';
-import {services} from '../screens/Firebase/Firebase/dataService/services'
+import services from '../screens/Firebase/Firebase/dataService/services'
 
 
 
@@ -17,6 +17,18 @@ const Bookings = ({ navigation }) => {
   const [fullName, setFullName] = React.useState('');
   const [email, setEmail] = React.useState('');
   const [phone, setPhone] = React.useState('');
+
+  const viewAppointment = () => {
+    db.collection('Bookings').doc("").collection('bookings')
+        .onSnapshot((snapshot) => {
+            const dis = snapshot.docs.map((doc) => ({
+                id: doc.id,
+                ...doc.data(),
+            }))
+            setDoctor(dis)
+        })
+}
+
   return (
     <View style={styles.container}>
       <View style={styles.mainText}>
@@ -107,7 +119,7 @@ const Bookings = ({ navigation }) => {
           />
 
                            <TouchableOpacity style={styles.button}>
-                  <Text style={styles.btn} onPress={() => navigation.navigate('Maps')}>Confirm</Text>
+                  <Text style={styles.btn} onPress={() => navigation.navigate('Conclude')}>Confirm</Text>
               </TouchableOpacity>
 
     </View>
@@ -135,18 +147,19 @@ const styles = StyleSheet.create({
     height: 40,
     left: 10,
     top: 100,
-    backgroundColor: '#eee',
+    backgroundColor: '#fff',
     border: 30,
     borderRadius: 60,
     marginTop: 15,
     paddingLeft: 10,
+    shadowRadius: 60,
   },
    button: {
     marginTop: 5,
    paddingLeft: 230
   },
   btn: {
-    backgroundColor: '#eee',
+    backgroundColor: '#fff',
     borderRadius: 80,
     width: 70,
     height: 30,
@@ -160,7 +173,7 @@ checkboxBase: {
     alignItems: 'center',
     borderRadius: 4,
     borderWidth: 2,
-    borderColor: 'coral',
+    borderColor: '#fff',
     backgroundColor: 'transparent',
   },
   
@@ -174,7 +187,8 @@ checkboxBase: {
     alignItems: 'center',
   },
     checkboxChecked: {
-    backgroundColor: 'coral',
+    backgroundColor: '#fff',
+    shadowRadius: 60,
   },
 });
 
