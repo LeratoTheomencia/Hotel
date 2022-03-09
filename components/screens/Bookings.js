@@ -6,7 +6,7 @@ import { Card } from 'react-native-paper';
 import {firebase} from './Firebase/Firebase/Conflig';
 import { Ionicons } from '@expo/vector-icons';
 import { RadioButton } from 'react-native-paper';
-import services from '../screens/Firebase/Firebase/dataService/services'
+import services from './Firebase/Firebase/dataService/services'
 
 
 
@@ -159,12 +159,13 @@ const styles = StyleSheet.create({
    paddingLeft: 230
   },
   btn: {
-    backgroundColor: '#fff',
+    backgroundColor: '#eee',
     borderRadius: 80,
     width: 70,
     height: 30,
     textAlign: 'center',
     padding: 3,
+    shadowRadius: 60,
   },
 checkboxBase: {
     width: 24,

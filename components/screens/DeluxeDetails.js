@@ -8,53 +8,38 @@ import { Card } from 'react-native-paper';
 const DeluxeDetails = ({ navigation, route }) => {
 
   const [rooms, setRooms] = useState([]);
-  const handleGetDirections = () => {}
- 
-
-  {rooms.map((data) => {
-    return (
-      <View>
-        <Text style={{marginTop: 20, marginLeft: 10, textAlign: 'center'}}>Deluxe</Text>
-        <Text>{(data.description)}</Text>
-      </View>
-    )
-  })}
-
-  return(
-    <View style={styles.contain}>
-
-     
-
-      
-
+  const handleGetDirections = () => { }
+  
+  {
+    rooms.map((data) => {
+      return (
         <View>
-          <Image source={route.params.image} style={styles.img} />
+          <Text style={{ marginTop: 20, marginLeft: 10, textAlign: 'center' }}>Deluxe</Text>
+          <Text>{(data.description)}</Text>
         </View>
-       
+      )
+    })
+  }
 
-    
-
+  return (
+    <View style={styles.contain}>
+      <View>
+        <Image source={route.params.image} style={styles.img} />
+      </View>
       <Card style={styles.card}>
-      
         <Text style={styles.text}>{route.params.name}</Text>
         <Text style={styles.text}>{route.params.description}</Text>
         <Text style={styles.text}>{route.params.price}</Text>
         <TouchableOpacity style={styles.button}>
-        <Text style={styles.btn} onPress={() => navigation.navigate('Calender')}>Book Now</Text>
-      </TouchableOpacity>
+          <Text style={styles.btn} onPress={() => navigation.navigate('Calender')}>Book Now</Text>
+        </TouchableOpacity>
       </Card>
-
-      <Card style={{marginTop: 10}}>
-      <Image source={require('../../assets/Images/bloem map.png')} style={styles.img} />
-             <TouchableOpacity
-          style={styles.paragraph}
+      <Card style={{ marginTop: 10 }}>
+        <TouchableOpacity 
           onPress={() => navigation.navigate('Maps')}>
-         <Text style={{alignSelf:'center',marginTop:10,fontSize:16,fontWeight:'bold',color:'white'}}> Directions</Text>
-            </TouchableOpacity>
+          <Image source={require('../../assets/Images/bloem map.png')} style={styles.img} />
+        </TouchableOpacity>
       </Card>
-   
-      
-
     </View>
   );
 }
@@ -62,7 +47,7 @@ const DeluxeDetails = ({ navigation, route }) => {
 export default DeluxeDetails;
 
 const styles = StyleSheet.create({
-  contain:{
+  contain: {
     flex: 1,
     backgroundColor: '#fff'
   },
@@ -73,7 +58,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     textAlign: 'center'
   },
-  img:{
+  img: {
     width: 400,
     height: 250,
     borderRadius: 10,
@@ -89,7 +74,8 @@ const styles = StyleSheet.create({
     marginTop: 15,
     shadowRadius: 60,
     borderTopRightRadius: 25,
-    borderBottomLeftRadius: 25
+    borderBottomLeftRadius: 25,
+    alignSelf: 'center'
   },
   main: {
     marginTop: 10,
@@ -115,12 +101,12 @@ const styles = StyleSheet.create({
     color: '#fff'
   },
   paragraph: {
-  marginTop:5,
-  borderRadius:40,
-  borderWidth:0,
-  alignSelf:'center',
-  backgroundColor:'#EEC048',
-  width:150,
-  height:40
-},
+    marginTop: 5,
+    borderRadius: 40,
+    borderWidth: 0,
+    alignSelf: 'center',
+    backgroundColor: '#EEC048',
+    width: 150,
+    height: 40
+  },
 })
