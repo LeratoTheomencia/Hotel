@@ -4,11 +4,48 @@ import { StyleSheet, Text, View, ScrollView, TouchableOpacity, Image } from 'rea
 //import { useEffect } from 'react/cjs/react.production.min';
 import { db, firebase } from './Firebase/Firebase/Conflig';
 import { Card } from 'react-native-paper';
+import getDirections from 'react-native-google-maps-directions'
 
 const DeluxeDetails = ({ navigation, route }) => {
 
   const [rooms, setRooms] = useState([]);
-  const handleGetDirections = () => { }
+  const handleGetDirections = () => {
+    const data = {
+       source: {
+        latitude: -29.087217,
+        longitude: 26.154898
+      },
+      destination: {
+        latitude: -28.741943,
+        longitude: 24.771944
+      },
+      params: [
+        {
+          key: "travelmode",
+          value: "driving"        // may be "walking", "bicycling" or "transit" as well
+        },
+        {
+          key: "dir_action",
+          value: "navigate"       // this instantly initializes navigation using the given travel mode
+        }
+      ],
+      waypoints: [
+        {
+          latitude: -33.8600025,
+          longitude: 18.697452
+        },
+        {
+          latitude: -33.8600026,
+          longitude: 18.697453
+        },
+           {
+          latitude: -33.8600036,
+          longitude: 18.697493
+        }
+      ]
+    }
+    getDirections(data)
+  }
   
   {
     rooms.map((data) => {
@@ -34,12 +71,13 @@ const DeluxeDetails = ({ navigation, route }) => {
           <Text style={styles.btn} onPress={() => navigation.navigate('Calender')}>Book Now</Text>
         </TouchableOpacity>
       </Card>
-      <Card style={{ marginTop: 10 }}>
-        <TouchableOpacity 
-          onPress={() => navigation.navigate('Maps')}>
-          <Image source={require('../../assets/Images/bloem map.png')} style={styles.img} />
-        </TouchableOpacity>
-      </Card>
+           <Image source={require('../../assets/Images/bloem map.png')} style={styles.img} />
+             <TouchableOpacity
+          style={styles.paragraph}
+          onPress={handleGetDirections} title="Get Directions">
+         <Text style={{alignSelf:'center', marginTop:10, fontSize:16,fontWeight:'bold', color:'white'}}> Directions</Text>
+            </TouchableOpacity>
+        
     </View>
   );
 }
@@ -101,7 +139,7 @@ const styles = StyleSheet.create({
     color: '#fff'
   },
   paragraph: {
-    marginTop: 5,
+    marginTop: -40,
     borderRadius: 40,
     borderWidth: 0,
     alignSelf: 'center',

@@ -12,7 +12,7 @@ import Home from './components/screens/Home';
 import About from './components/screens/About';
 import Bookings from './components/screens/Bookings';
 import Calendar from './components/screens/Calendar';
-import Maps from './components/screens/Maps';
+//import Maps from './components/screens/Maps';
 //import DeluxeRoom from './components/screens/DeluxeRoom';
 import DeluxeDetails from './components/screens/DeluxeDetails';
 //import Standard from './components/screens/Standard';
@@ -71,11 +71,11 @@ export default function App() {
           component={DeluxeDetails}
         />
 
-
+{/* 
         <Stack.Screen
           name="Maps"
           component={Maps}
-        />
+        /> */}
 
         <Stack.Screen
           name="Conclude"
