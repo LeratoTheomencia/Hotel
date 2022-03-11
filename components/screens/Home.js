@@ -33,21 +33,21 @@ const Home = ({ navigation, route }) => {
 
       {rooms.map((data) => (
 
-        <View style={{ flex: 1 }}>
+        <View  >
 
 
-          <View>
+          <View style={styles.main}>
             <Image source={data.image} style={styles.img} />
           </View>
 
-          <View  style={{ marginLeft: 260, marginTop: -90 }}>
+          <View  style={{ marginLeft: 220, marginTop: -90 }}>
             <Text>{data.name}</Text>
             <Text>{data.price}</Text>
           </View>
 
           <View>
             <TouchableOpacity onPress={() => navigation.navigate('DeluxeDetails', data)}>
-              <Text style={{ marginLeft: 350, color: '#146BEE', fontWeight: 'bold', marginTop: 5 }}>View more</Text>
+              <Text style={{ marginLeft: 270, color: '#146BEE', fontWeight: 'bold', marginTop: 5 }}>View more</Text>
             </TouchableOpacity>
           </View>
 
@@ -67,13 +67,17 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    marginTop: 20,
+
    },
   img: {
-    width: 250,
-    height: 200,
+    width: 200,
+    height: 150,
     borderRadius: 10,
-    
    
   },
+
+  main: {
+    marginTop: 50,
+    marginLeft: 15
+  }
 })

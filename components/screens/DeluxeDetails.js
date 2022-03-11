@@ -11,7 +11,7 @@ const DeluxeDetails = ({ navigation, route }) => {
   const [rooms, setRooms] = useState([]);
   const handleGetDirections = () => {
     const data = {
-       source: {
+      source: {
         latitude: -29.087217,
         longitude: 26.154898
       },
@@ -38,7 +38,7 @@ const DeluxeDetails = ({ navigation, route }) => {
           latitude: -33.8600026,
           longitude: 18.697453
         },
-           {
+        {
           latitude: -33.8600036,
           longitude: 18.697493
         }
@@ -46,13 +46,14 @@ const DeluxeDetails = ({ navigation, route }) => {
     }
     getDirections(data)
   }
-  
+
   {
     rooms.map((data) => {
       return (
         <View>
           <Text style={{ marginTop: 20, marginLeft: 10, textAlign: 'center' }}>Deluxe</Text>
           <Text>{(data.description)}</Text>
+          <Text>{(data.gym)}</Text>
         </View>
       )
     })
@@ -64,20 +65,41 @@ const DeluxeDetails = ({ navigation, route }) => {
         <Image source={route.params.image} style={styles.img} />
       </View>
       <Card style={styles.card}>
-        <Text style={styles.text}>{route.params.name}</Text>
-        <Text style={styles.text}>{route.params.description}</Text>
-        <Text style={styles.text}>{route.params.price}</Text>
-        <TouchableOpacity style={styles.button}>
-          <Text style={styles.btn} onPress={() => navigation.navigate('Calender')}>Book Now</Text>
-        </TouchableOpacity>
+        <Text style={{fontWeight: 'bold', marginTop: 2, marginLeft: 6}}>{route.params.name}</Text>
+        <Text style={{marginTop: 4, marginLeft: 6}}>{route.params.description}</Text>
+        <Text style={{marginTop: 4, marginLeft: 6 }}>{route.params.price}</Text>
+        <Text style={{marginTop: 4, marginLeft: 6}}>{route.params.gym}</Text>
+       
+        <View style={{flexDirection: 'row',}}>
+        <View style={{marginTop: 4, marginLeft: 6}}>
+          <Image source={route.params.image2} style={styles.image} />
+          <Text style={{flexDirection: 'row'}}>BBQ</Text>
+        </View>
+        <View style={{ marginTop: 4}}>
+          <Image source={route.params.image1} style={styles.image} />
+          <Text style={{marginLeft: 6}}>WIFI</Text>
+          </View>
+          <View style={{ marginTop: 4}}>
+            <Image source={route.params.image3} style={styles.image} />
+            <Text style={{marginLeft: 6}}>Air-Con</Text>
+          </View>
+        </View>
+        <View>
+          <TouchableOpacity style={styles.button}>
+            <Text style={styles.btn} onPress={() => navigation.navigate('Calender')}>Book Now</Text>
+          </TouchableOpacity>
+        </View>
       </Card>
-           <Image source={require('../../assets/Images/bloem map.png')} style={styles.img} />
-             <TouchableOpacity
+      <View style={{ marginTop: 5 }}>
+        <Image source={require('../../assets/Images/bloem map.png')} style={styles.img} />
+        <TouchableOpacity
           style={styles.paragraph}
           onPress={handleGetDirections} title="Get Directions">
-         <Text style={{alignSelf:'center', marginTop:10, fontSize:16,fontWeight:'bold', color:'white'}}> Directions</Text>
-            </TouchableOpacity>
-        
+          <Text style={{ alignSelf: 'center', marginTop: 10, fontSize: 16, fontWeight: 'bold', color: 'white' }}> Directions</Text>
+        </TouchableOpacity>
+      </View>
+
+
     </View>
   );
 }
@@ -98,7 +120,7 @@ const styles = StyleSheet.create({
   },
   img: {
     width: 400,
-    height: 250,
+    height: 180,
     borderRadius: 10,
     marginTop: 15,
     alignSelf: 'center'
@@ -106,10 +128,10 @@ const styles = StyleSheet.create({
   card: {
     borderColor: '#eee',
     width: 420,
-    height: 200,
+    height: 300,
     backgroundColor: '#fff',
     marginLeft: 12,
-    marginTop: 15,
+    marginTop: 10,
     shadowRadius: 60,
     borderTopRightRadius: 25,
     borderBottomLeftRadius: 25,
@@ -131,7 +153,7 @@ const styles = StyleSheet.create({
     height: 40,
     width: 120,
     backgroundColor: '#146BEE',
-    marginLeft: 150
+    marginLeft: 280
   },
   btn: {
     fontWeight: 'bold',
@@ -147,4 +169,8 @@ const styles = StyleSheet.create({
     width: 150,
     height: 40
   },
+  image: {
+    width: 30,
+    height: 30
+  }
 })
