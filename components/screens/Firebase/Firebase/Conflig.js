@@ -15,6 +15,6 @@ var firebaseConfig = {
   // Initialize Firebase
 
   
-const app = firebase.initializeApp(firebaseConfig)
+ firebase.initializeApp(firebaseConfig)
 
 export {firebase}  

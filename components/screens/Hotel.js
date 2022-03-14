@@ -53,7 +53,6 @@ const DeluxeDetails = ({ navigation, route }) => {
         <View>
           <Text style={{ marginTop: 20, marginLeft: 10, textAlign: 'center' }}>Deluxe</Text>
           <Text>{(data.description)}</Text>
-          <Text>{(data.gym)}</Text>
         </View>
       )
     })
@@ -65,23 +64,23 @@ const DeluxeDetails = ({ navigation, route }) => {
         <Image source={route.params.image} style={styles.img} />
       </View>
       <Card style={styles.card}>
-        <Text style={{fontWeight: 'bold', marginTop: 2, marginLeft: 6}}>{route.params.name}</Text>
-        <Text style={{marginTop: 4, marginLeft: 6}}>{route.params.description}</Text>
-        <Text style={{marginTop: 4, marginLeft: 6 }}>{route.params.price}</Text>
-        <Text style={{marginTop: 4, marginLeft: 6}}>{route.params.gym}</Text>
-       
-        <View style={{flexDirection: 'row',}}>
-        <View style={{marginTop: 4, marginLeft: 6}}>
-          <Image source={route.params.image2} style={styles.image} />
-          <Text style={{flexDirection: 'row'}}>BBQ</Text>
-        </View>
-        <View style={{ marginTop: 4}}>
-          <Image source={route.params.image1} style={styles.image} />
-          <Text style={{marginLeft: 6}}>WIFI</Text>
+        <Text style={{ fontWeight: 'bold', marginTop: 2, marginLeft: 6 }}>{route.params.name}</Text>
+        <Text style={{ marginTop: 4, marginLeft: 6 }}>{route.params.description}</Text>
+        <Text style={{ marginTop: 4, marginLeft: 6 }}>{route.params.price}</Text>
+        <Text style={{ marginTop: 4, marginLeft: 6 }}>{route.params.gym}</Text>
+
+        <View style={{ flexDirection: 'row', }}>
+          <View style={{ marginTop: 4, marginLeft: 6 }}>
+            <Image source={route.params.image2} style={styles.image} />
+            <Text style={{ flexDirection: 'row' }}>BBQ</Text>
           </View>
-          <View style={{ marginTop: 4}}>
+          <View style={{ marginTop: 4 }}>
+            <Image source={route.params.image1} style={styles.image} />
+            <Text style={{ marginLeft: 6 }}>WIFI</Text>
+          </View>
+          <View style={{ marginTop: 4 }}>
             <Image source={route.params.image3} style={styles.image} />
-            <Text style={{marginLeft: 6}}>Air-Con</Text>
+            <Text style={{ marginLeft: 6 }}>Air-Con</Text>
           </View>
         </View>
         <View>

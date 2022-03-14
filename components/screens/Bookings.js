@@ -18,16 +18,22 @@ const Bookings = ({ navigation }) => {
   const [email, setEmail] = React.useState('');
   const [phone, setPhone] = React.useState('');
 
-  const viewAppointment = () => {
-    db.collection('Bookings').doc("").collection('bookings')
-        .onSnapshot((snapshot) => {
-            const dis = snapshot.docs.map((doc) => ({
-                id: doc.id,
-                ...doc.data(),
-            }))
-            setDoctor(dis)
-        })
-}
+  const Navigation = ()=> {
+    firebase.firestore().collection("Booking").doc().set({
+      fullName,
+      email,
+      phone,
+    })
+      .then(() => {
+        console.log("Document successfully written!");
+      })
+      .catch((error) => {
+        console.error("Error writing document: ", error);
+      });
+  }
+
+  
+  
 
   return (
     <View style={styles.container}>
@@ -119,8 +125,14 @@ const Bookings = ({ navigation }) => {
           />
 
                            <TouchableOpacity style={styles.button}>
-                  <Text style={styles.btn} onPress={() => navigation.navigate('Conclude')}>Confirm</Text>
+                  <Text style={styles.btn} onPress={Navigation}>Submit</Text>
               </TouchableOpacity>
+
+              <View>
+              <TouchableOpacity style={styles.button}>
+            <Text style={styles.btn} onPress={() => navigation.navigate('Conclude')}>Next</Text>
+          </TouchableOpacity>
+              </View>
 
     </View>
   )

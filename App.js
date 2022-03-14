@@ -14,7 +14,7 @@ import Bookings from './components/screens/Bookings';
 import Calendar from './components/screens/Calendar';
 //import Maps from './components/screens/Maps';
 //import DeluxeRoom from './components/screens/DeluxeRoom';
-import DeluxeDetails from './components/screens/DeluxeDetails';
+import Hotel from './components/screens/Hotel';
 //import Standard from './components/screens/Standard';
 import StandardDetails from './components/screens/StandardDetails';
 //import Suite from './components/screens/Suite';
@@ -67,8 +67,8 @@ export default function App() {
 
 
         <Stack.Screen
-          name="DeluxeDetails"
-          component={DeluxeDetails}
+          name="Hotel"
+          component={Hotel}
         />
 
 {/* 

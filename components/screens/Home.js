@@ -40,13 +40,13 @@ const Home = ({ navigation, route }) => {
             <Image source={data.image} style={styles.img} />
           </View>
 
-          <View  style={{ marginLeft: 220, marginTop: -90 }}>
+          <View style={{ marginLeft: 220, marginTop: -90 }}>
             <Text>{data.name}</Text>
             <Text>{data.price}</Text>
           </View>
 
           <View>
-            <TouchableOpacity onPress={() => navigation.navigate('DeluxeDetails', data)}>
+            <TouchableOpacity onPress={() => navigation.navigate('Hotel', data)}>
               <Text style={{ marginLeft: 270, color: '#146BEE', fontWeight: 'bold', marginTop: 5 }}>View more</Text>
             </TouchableOpacity>
           </View>
@@ -68,12 +68,12 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff',
 
-   },
+  },
   img: {
     width: 200,
     height: 150,
     borderRadius: 10,
-   
+
   },
 
   main: {
