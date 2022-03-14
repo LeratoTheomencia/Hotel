@@ -60,9 +60,9 @@ const DeluxeDetails = ({ navigation, route }) => {
 
   return (
     <View style={styles.contain}>
-      <View>
+      <Card>
         <Image source={route.params.image} style={styles.img} />
-      </View>
+      </Card>
       <Card style={styles.card}>
         <Text style={{ fontWeight: 'bold', marginTop: 2, marginLeft: 6 }}>{route.params.name}</Text>
         <Text style={{ marginTop: 4, marginLeft: 6 }}>{route.params.description}</Text>
@@ -120,9 +120,11 @@ const styles = StyleSheet.create({
   img: {
     width: 400,
     height: 180,
-    borderRadius: 10,
-    marginTop: 15,
-    alignSelf: 'center'
+   alignSelf: 'center',
+    borderBottomLeftRadius: 55,
+    borderBottomRightRadius: 55,
+    borderTopRightRadius: 2,
+    borderTopLeftRadius: 2
   },
   card: {
     borderColor: '#eee',

@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { StyleSheet, View, Text, Image, TouchableOpacity, _ScrollView } from 'react-native';
+import { Card } from 'react-native-paper';
+import Icons from 'react-native-vector-icons/MaterialIcons'
 
 import { db, firebase } from './Firebase/Firebase/Conflig';
 const Home = ({ navigation, route }) => {
@@ -30,10 +32,18 @@ const Home = ({ navigation, route }) => {
   return (
     <View style={styles.container}>
 
+<Card>
+        <Image
+          source={require('../../assets/Images/beach hotel.jpeg')}
+          style={styles.img1}
+        />
+
+      </Card>
+
 
       {rooms.map((data) => (
 
-        <View  >
+        <View>
 
 
           <View style={styles.main}>
@@ -69,15 +79,23 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
 
   },
+  img1: {
+    width: 400,
+    height: 300,
+    alignSelf: 'center',
+    borderBottomLeftRadius: 55,
+    borderBottomRightRadius: 55,
+    borderTopRightRadius: 2,
+    borderTopLeftRadius: 2
+  },
   img: {
     width: 200,
     height: 150,
     borderRadius: 10,
-
   },
 
   main: {
-    marginTop: 50,
+    marginTop: 40,
     marginLeft: 15
   }
 })

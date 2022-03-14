@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Text, View, StyleSheet } from 'react-native';
+import { Text, View, StyleSheet, StatusBar } from 'react-native';
 import Constants from 'expo-constants';
 // or any pure javascript modules available in npm
 import { Card } from 'react-native-paper';
@@ -29,6 +29,11 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator>
 
+      <Stack.Screen
+          name="Home"
+          component={Home}
+        />
+
 
         <Stack.Screen
           name="login"
@@ -45,10 +50,7 @@ export default function App() {
           component={ResetPassword}
         />
 
-        <Stack.Screen
-          name="Home"
-          component={Home}
-        />
+       
 
         <Stack.Screen
           name="Calender"
