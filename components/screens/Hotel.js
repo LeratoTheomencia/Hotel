@@ -70,6 +70,7 @@ const DeluxeDetails = ({ navigation, route }) => {
         <Text style={{ marginTop: 4, marginLeft: 6 }}>{route.params.gym}</Text>
         <Text style={{ marginTop: 4, marginLeft: 6 }}>{route.params.breakfast}</Text>
         <Text style={{ marginTop: 4, marginLeft: 6 }}>{route.params.pool}</Text>
+        <Text style={{ marginTop: 4, marginLeft: 6 }}>{route.params.television}</Text>
 
         <View style={{ flexDirection: 'row', }}>
           <View style={{ marginTop: 4, marginLeft: 6 }}>

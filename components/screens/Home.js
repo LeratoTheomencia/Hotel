@@ -51,9 +51,12 @@ const Home = ({ navigation, route }) => {
               <Image source={data.image} style={styles.img} />
             </View>
 
-            <View style={{ marginLeft: 220, marginTop: -90 }}>
+            <View style={{ marginLeft: 220, marginTop: -130 }}>
               <Text style={{ fontSize: 15, fontWeight: 'bold' }}>{data.name}</Text>
               <Text>{data.price}</Text>
+              <Text>{data.breakfast}</Text>
+              <Text>{data.pool}</Text>
+              <Text>{data.gym}</Text>
             </View>
 
             <View>

@@ -50,7 +50,6 @@ export default function App() {
           component={Home}
         />
 
-
         <Stack.Screen
           name="Calender"
           component={Calendar}
