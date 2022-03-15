@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {StyleSheet, View, Text, TouchableOpacity, TextInput, Image} from 'react-native'
+import {StyleSheet, View, Text, TouchableOpacity, TextInput, Image, Picker} from 'react-native'
 import Calendar from 'react-calendar';
 import moment from 'moment';
 import { Card } from 'react-native-paper';
@@ -46,6 +46,7 @@ const App = ({navigation}) => {
         <Text style={{marginTop: 15, paddingLeft: 20, fontWeight: 500}}>Rooms</Text>
 
   <Text style={{marginTop: 15, paddingLeft: 20}}>2 Bedrooms with a kicthen</Text>*/}
+
       
 
                  <TouchableOpacity style={styles.button}>

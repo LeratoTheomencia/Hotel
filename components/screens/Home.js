@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { StyleSheet, View, Text, Image, TouchableOpacity, _ScrollView } from 'react-native';
+import { StyleSheet, View, Text, Image, TouchableOpacity, ScrollView } from 'react-native';
 import { Card } from 'react-native-paper';
 import Icons from 'react-native-vector-icons/MaterialIcons'
 
@@ -32,40 +32,39 @@ const Home = ({ navigation, route }) => {
   return (
     <View style={styles.container}>
 
-<Card>
-        <Image
-          source={require('../../assets/Images/beach hotel.jpeg')}
-          style={styles.img1}
-        />
+      <ScrollView>
+        <Card>
+          <Image
+            source={require('../../assets/Images/beach hotel.jpeg')}
+            style={styles.img1}
+          />
 
-      </Card>
-
-
-      {rooms.map((data) => (
-
-        <View>
+        </Card>
 
 
-          <View style={styles.main}>
-            <Image source={data.image} style={styles.img} />
-          </View>
-
-          <View style={{ marginLeft: 220, marginTop: -90 }}>
-            <Text>{data.name}</Text>
-            <Text>{data.price}</Text>
-          </View>
+        {rooms.map((data) => (
 
           <View>
-            <TouchableOpacity onPress={() => navigation.navigate('Hotel', data)}>
-              <Text style={{ marginLeft: 270, color: '#146BEE', fontWeight: 'bold', marginTop: 5 }}>View more</Text>
-            </TouchableOpacity>
+
+
+            <View style={styles.main}>
+              <Image source={data.image} style={styles.img} />
+            </View>
+
+            <View style={{ marginLeft: 220, marginTop: -90 }}>
+              <Text style={{ fontSize: 15, fontWeight: 'bold' }}>{data.name}</Text>
+              <Text>{data.price}</Text>
+            </View>
+
+            <View>
+              <TouchableOpacity onPress={() => navigation.navigate('Hotel', data)}>
+                <Text style={{ marginLeft: 270, color: '#146BEE', fontWeight: 'bold', marginTop: 5 }}>View more</Text>
+              </TouchableOpacity>
+            </View>
+
           </View>
-
-        </View>
-      ))}
-
-
-
+        ))}
+      </ScrollView>
 
     </View>
   )
@@ -77,6 +76,8 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center'
 
   },
   img1: {
