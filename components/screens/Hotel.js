@@ -68,19 +68,21 @@ const DeluxeDetails = ({ navigation, route }) => {
         <Text style={{ marginTop: 4, marginLeft: 6 }}>{route.params.description}</Text>
         <Text style={{ marginTop: 4, marginLeft: 6 }}>{route.params.price}</Text>
         <Text style={{ marginTop: 4, marginLeft: 6 }}>{route.params.gym}</Text>
+        <Text style={{ marginTop: 4, marginLeft: 6 }}>{route.params.breakfast}</Text>
+        <Text style={{ marginTop: 4, marginLeft: 6 }}>{route.params.pool}</Text>
 
         <View style={{ flexDirection: 'row', }}>
           <View style={{ marginTop: 4, marginLeft: 6 }}>
             <Image source={route.params.image2} style={styles.image} />
-            <Text style={{ flexDirection: 'row' }}>BBQ</Text>
+            <Text style={{ flexDirection: 'row', color: '#EEC048', fontWeight: 'bold' }}>BBQ</Text>
           </View>
           <View style={{ marginTop: 4 }}>
             <Image source={route.params.image1} style={styles.image} />
-            <Text style={{ marginLeft: 6 }}>WIFI</Text>
+            <Text style={{ marginLeft: 6, color: '#EEC048', fontWeight: 'bold' }}>WIFI</Text>
           </View>
           <View style={{ marginTop: 4 }}>
             <Image source={route.params.image3} style={styles.image} />
-            <Text style={{ marginLeft: 6 }}>Air-Con</Text>
+            <Text style={{ marginLeft: 6, color: '#EEC048', fontWeight: 'bold' }}>Air-Con</Text>
           </View>
         </View>
         <View>
@@ -90,7 +92,7 @@ const DeluxeDetails = ({ navigation, route }) => {
         </View>
       </Card>
       <View style={{ marginTop: 5 }}>
-        <Image source={require('../../assets/Images/bloem map.png')} style={styles.img} />
+        <Image source={require('../../assets/Images/bloem map.png')} style={styles.img1} />
         <TouchableOpacity
           style={styles.paragraph}
           onPress={handleGetDirections} title="Get Directions">
@@ -120,7 +122,7 @@ const styles = StyleSheet.create({
   img: {
     width: 400,
     height: 180,
-   alignSelf: 'center',
+    alignSelf: 'center',
     borderBottomLeftRadius: 55,
     borderBottomRightRadius: 55,
     borderTopRightRadius: 2,
@@ -129,7 +131,7 @@ const styles = StyleSheet.create({
   card: {
     borderColor: '#eee',
     width: 420,
-    height: 300,
+    height: 380,
     backgroundColor: '#fff',
     marginLeft: 12,
     marginTop: 10,
@@ -168,10 +170,17 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     backgroundColor: '#EEC048',
     width: 150,
-    height: 40
+    height: 40,
   },
   image: {
     width: 30,
-    height: 30
-  }
+    height: 30,
+  },
+  img1: {
+    width: 400,
+    height: 180,
+    alignSelf: 'center',
+    marginTop: 10, 
+    
+  },
 })
