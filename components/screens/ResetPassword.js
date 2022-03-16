@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { Text, View, StyleSheet, Image, TextInput, TouchableOpacity } from 'react-native';
+import { Text, View, StyleSheet, Image, TextInput, TouchableOpacity, Alert } from 'react-native';
 import Constants from 'expo-constants';
 // or any pure javascript modules available in npm
 import { Card } from 'react-native-paper';
@@ -7,8 +7,24 @@ import {firebase} from './Firebase/Firebase/Conflig'
 
 const ResetPassword = ({ navigation }) => {
 
-  const [email, setEmail] = useState ('');
-  const [resetEmail, setResetEmail] = useState ('')
+  const [userEmail, setUserEmail] = useState('')
+
+  const submit = () => {
+    resetPassword(userEmail)
+  }
+
+  const resetPassword = (email) => {
+    firebase.auth().sendPasswordResetEmail(email)
+    .then(() => {
+        alert('Password reset email sent!')
+    }).catch((error) => {
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        alert(errorMessage, ":" + errorCode)
+    })
+}
+
+  
   return (
     <View style={styles.container}>
         <Card style={styles.main}>
@@ -24,14 +40,14 @@ const ResetPassword = ({ navigation }) => {
             <Text style={styles.head}>Reset Password</Text>
            
             <TextInput
-                placeholder='Email'
+                placeholder={'Email'}
                 style={styles.input}
-                onChangeText={(email) => setEmail(email)}
+                onChangeText={(userEmail) => setUserEmail(userEmail)}
             />
 
             <View style={styles.btn}>
-                <TouchableOpacity onPress={() => resetEmail()}>
-                    <Text style={styles.send}>Send Verification Email</Text>
+                <TouchableOpacity onPress={submit}>
+                    <Text style={styles.send}>Reset Password</Text>
                 </TouchableOpacity>
             </View>
         </View>
