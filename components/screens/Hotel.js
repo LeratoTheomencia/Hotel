@@ -31,16 +31,16 @@ const DeluxeDetails = ({ navigation, route }) => {
       ],
       waypoints: [
         {
-          latitude: -33.8600025,
-          longitude: 18.697452
+          latitude: -28.741943,
+          longitude: 24.771944
         },
         {
-          latitude: -33.8600026,
-          longitude: 18.697453
+          latitude: -28.741943,
+          longitude: 24.771944
         },
         {
-          latitude: -33.8600036,
-          longitude: 18.697493
+          latitude: -28.741943,
+          longitude: 24.771944
         }
       ]
     }
