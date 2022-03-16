@@ -29,7 +29,7 @@ const App = ({navigation}) => {
 
     <View style={styles.java}>
 
-    <Text style={{ marginLeft: 50, fontWeight: 'bold', justifyContent: 'space-evenly'}}>Adults</Text>
+    <Text style={{ marginLeft: 20, fontWeight: 'bold', justifyContent: 'space-evenly'}}>Adults</Text>
     <RNPickerSelect
                  onValueChange={(value) => console.log(value)}
                  items={[
@@ -42,7 +42,7 @@ const App = ({navigation}) => {
                  ]}
              />
 
-                 <Text style={{ marginLeft: 50, fontWeight: 'bold', justifyContent: 'space-evenly'}}>Childen</Text>
+                 <Text style={{ marginLeft: 30, fontWeight: 'bold', justifyContent: 'space-evenly'}}>Childen</Text>
                <RNPickerSelect
                  onValueChange={(value) => console.log(value)}
                  items={[

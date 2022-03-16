@@ -30,8 +30,8 @@ export default function App() {
       <Stack.Navigator>
 
       <Stack.Screen
-          name="Bookings"
-          component={Bookings}
+          name="Calender"
+          component={Calendar}
         />
 
 
@@ -55,17 +55,17 @@ export default function App() {
           component={Home}
         />
 
-        <Stack.Screen
-          name="Calender"
-          component={Calendar}
-        />
+        
 
         <Stack.Screen
           name="About"
           component={About}
         />
 
-        
+        <Stack.Screen
+          name="Bookings"
+          component={Bookings}
+        />
 
 
         <Stack.Screen
