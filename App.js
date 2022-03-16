@@ -29,6 +29,11 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator>
 
+      <Stack.Screen
+          name="Bookings"
+          component={Bookings}
+        />
+
 
         <Stack.Screen
           name="login"
@@ -60,10 +65,7 @@ export default function App() {
           component={About}
         />
 
-        <Stack.Screen
-          name="Bookings"
-          component={Bookings}
-        />
+        
 
 
         <Stack.Screen

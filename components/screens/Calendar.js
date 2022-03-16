@@ -3,9 +3,11 @@ import {StyleSheet, View, Text, TouchableOpacity, TextInput, Image, Picker} from
 import Calendar from 'react-calendar';
 import moment from 'moment';
 import { Card } from 'react-native-paper';
+import RNPickerSelect from "react-native-picker-select";
 
 const App = ({navigation}) => {
 
+  
   const [dateState, setDateState] = useState(new Date())
   const changeDate = (e) => {
     setDateState(e)
@@ -24,7 +26,37 @@ const App = ({navigation}) => {
     <p>Current selected date is <b>{moment(dateState).format('MMMM Do YYYY')}</b></p>
 
     </Card>
-   
+
+    <View style={styles.java}>
+
+    <Text style={{ marginLeft: 50, fontWeight: 'bold', justifyContent: 'space-evenly'}}>Adults</Text>
+    <RNPickerSelect
+                 onValueChange={(value) => console.log(value)}
+                 items={[
+                  { label: "1", value: "1" },
+                  { label: "2", value: "2" },
+                  { label: "3", value: "3" },
+                  { label: "4", value: "4" },
+                  { label: "5", value: "5" },
+                  { label: "more", value: "more" },
+                 ]}
+             />
+
+                 <Text style={{ marginLeft: 50, fontWeight: 'bold', justifyContent: 'space-evenly'}}>Childen</Text>
+               <RNPickerSelect
+                 onValueChange={(value) => console.log(value)}
+                 items={[
+                     { label: "1", value: "1" },
+                     { label: "2", value: "2" },
+                     { label: "3", value: "3" },
+                     { label: "4", value: "4" },
+                     { label: "5", value: "5" },
+                     { label: "more", value: "more" },
+                 ]}
+                 
+             />
+
+    </View>
 
     {/*} <Text style={{padding: 10}}>Dates</Text>
         <View style={styles.dates}>
@@ -102,6 +134,10 @@ const styles = StyleSheet.create({
     borderTopRightRadius: 25,
     borderBottomLeftRadius: 25
   },
+  java: {
+    flexDirection: 'row',
+    marginTop: 50,
+  }
 });
 
 export default App;

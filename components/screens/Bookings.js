@@ -6,17 +6,20 @@ import { Card } from 'react-native-paper';
 import {firebase} from './Firebase/Firebase/Conflig';
 import { Ionicons } from '@expo/vector-icons';
 import { RadioButton } from 'react-native-paper';
-import services from './Firebase/Firebase/dataService/services'
+import services from './Firebase/Firebase/dataService/services';
+
 
 
 
 
 const Bookings = ({ navigation }) => {
   
+  const [isDatePickerVisible, setDatePickerVisibility] = useState(false);
   const [checked, setChecked] = React.useState('first');
   const [fullName, setFullName] = React.useState('');
   const [email, setEmail] = React.useState('');
   const [phone, setPhone] = React.useState('');
+  
 
   const Navigation = ()=> {
     firebase.firestore().collection("Booking").doc().set({
