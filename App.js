@@ -29,11 +29,6 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator>
 
-      <Stack.Screen
-          name="Calender"
-          component={Calendar}
-        />
-
 
         <Stack.Screen
           name="login"
@@ -55,7 +50,10 @@ export default function App() {
           component={Home}
         />
 
-        
+        <Stack.Screen
+          name="Calender"
+          component={Calendar}
+        />
 
         <Stack.Screen
           name="About"

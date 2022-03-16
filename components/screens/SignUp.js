@@ -90,7 +90,7 @@ const styles = StyleSheet.create({
     borderTopLeftRadius: 5
   },
   header: {
-    marginTop: -50,
+    marginTop: -70,
     fontSize: 30,
     position: 'relative',
     color: '#2666CF',
