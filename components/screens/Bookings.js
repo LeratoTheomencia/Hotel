@@ -157,7 +157,7 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: 400
   },
-     input: {
+    input: {
     width: 311,
     height: 40,
     left: 10,
@@ -170,7 +170,7 @@ const styles = StyleSheet.create({
     shadowRadius: 60,
   },
    button: {
-    marginTop: 5,
+   marginTop: 5,
    paddingLeft: 230
   },
   btn: {

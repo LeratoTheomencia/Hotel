@@ -73,7 +73,7 @@ const styles = StyleSheet.create({
     borderTopLeftRadius: 5
   },
   header: {
-    marginTop: -270,
+    marginTop: -200,
     fontSize: 30,
     position: 'relative',
     color: '#2666CF',
