@@ -4,48 +4,10 @@ import { StyleSheet, Text, View, ScrollView, TouchableOpacity, Image } from 'rea
 //import { useEffect } from 'react/cjs/react.production.min';
 import { db, firebase } from './Firebase/Firebase/Conflig';
 import { Card } from 'react-native-paper';
-import getDirections from 'react-native-google-maps-directions'
 
 const DeluxeDetails = ({ navigation, route }) => {
 
   const [rooms, setRooms] = useState([]);
-  const handleGetDirections = () => {
-    const data = {
-      source: {
-        latitude: -29.087217,
-        longitude: 26.154898
-      },
-      destination: {
-        latitude: -28.741943,
-        longitude: 24.771944
-      },
-      params: [
-        {
-          key: "travelmode",
-          value: "driving"        // may be "walking", "bicycling" or "transit" as well
-        },
-        {
-          key: "dir_action",
-          value: "navigate"       // this instantly initializes navigation using the given travel mode
-        }
-      ],
-      waypoints: [
-        {
-          latitude: -28.741943,
-          longitude: 24.771944
-        },
-        {
-          latitude: -28.741943,
-          longitude: 24.771944
-        },
-        {
-          latitude: -28.741943,
-          longitude: 24.771944
-        }
-      ]
-    }
-    getDirections(data)
-  }
 
   {
     rooms.map((data) => {
@@ -92,14 +54,6 @@ const DeluxeDetails = ({ navigation, route }) => {
           </TouchableOpacity>
         </View>
       </Card>
-      <View style={{ marginTop: 5 }}>
-        <Image source={require('../../assets/Images/bloem map.png')} style={styles.img1} />
-        <TouchableOpacity
-          style={styles.paragraph}
-          onPress={handleGetDirections} title="Get Directions">
-          <Text style={{ alignSelf: 'center', marginTop: 10, fontSize: 16, fontWeight: 'bold', color: 'white' }}> Directions</Text>
-        </TouchableOpacity>
-      </View>
 
 
     </View>
@@ -122,7 +76,7 @@ const styles = StyleSheet.create({
   },
   img: {
     width: 400,
-    height: 180,
+    height: 280,
     alignSelf: 'center',
     borderBottomLeftRadius: 55,
     borderBottomRightRadius: 55,
@@ -163,15 +117,6 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     fontSize: 18,
     color: '#fff'
-  },
-  paragraph: {
-    marginTop: -40,
-    borderRadius: 40,
-    borderWidth: 0,
-    alignSelf: 'center',
-    backgroundColor: '#EEC048',
-    width: 150,
-    height: 40,
   },
   image: {
     width: 30,

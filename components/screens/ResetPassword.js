@@ -103,17 +103,19 @@ const styles = StyleSheet.create({
     },
     btn: {
       backgroundColor: '#146BEE',
-      marginTop: 100,
-      height: 60,
-      width: 250,
+      marginTop: 50,
+      height: 40,
+      width: 150,
       borderRadius: 20,
-      marginLeft: 25
+      marginLeft: 25,
+      justifyContent: 'center',
+      alignSelf: 'center'
 
     },
     send: {
       color: 'white',
       marginLeft: 45,
-      marginTop: 19,
+      marginTop: 3,
       fontSize: 15,
       fontWeight: 'bold'
     }
